@@ -5,39 +5,42 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: import_from_git" time="2.413992">
+      <testcase classname="fastlane.lanes" name="0: import_from_git" time="2.041821">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: bundle_install" time="0.472122">
+      <testcase classname="fastlane.lanes" name="1: bundle_install" time="0.47728">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: rm -rf ../output" time="0.010783">
+      <testcase classname="fastlane.lanes" name="2: rm -rf ../output" time="0.00836">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: rm -rf ../derivedData" time="0.010513">
+      <testcase classname="fastlane.lanes" name="3: rm -rf ../derivedData" time="0.00781">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: xcversion" time="1.533188">
+      <testcase classname="fastlane.lanes" name="4: xcversion" time="1.368585">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: git fetch --tags" time="2.02175">
+      <testcase classname="fastlane.lanes" name="5: git fetch --tags" time="1.737153">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="6: pod_push" time="1.02493">
+      <testcase classname="fastlane.lanes" name="6: pod_push" time="176.97131">
         
-          <failure message="/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/actions/actions_helper.rb:48:in `execute_action'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:236:in `block in execute_action'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:231:in `chdir'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:231:in `execute_action'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:157:in `trigger_action_by_name'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/fast_file.rb:149:in `method_missing'&#10;Fastfile:19:in `block in parsing_binding'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:49:in `block in execute'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:45:in `chdir'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:45:in `execute'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/lane_manager.rb:59:in `cruise_lane'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/command_line_handler.rb:36:in `handle'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/commands_generator.rb:107:in `block (2 levels) in run'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/commander-fastlane-4.4.6/lib/commander/command.rb:178:in `call'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/commander-fastlane-4.4.6/lib/commander/command.rb:153:in `run'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/commander-fastlane-4.4.6/lib/commander/runner.rb:476:in `run_active_command'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:75:in `run!'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/commander-fastlane-4.4.6/lib/commander/delegates.rb:15:in `run!'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/commands_generator.rb:332:in `run'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/commands_generator.rb:41:in `start'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/cli_tools_distributor.rb:108:in `take_off'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/fastlane-2.97.0/bin/fastlane:20:in `&lt;top (required)&gt;'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/bin/fastlane:23:in `load'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/bin/fastlane:23:in `&lt;top (required)&gt;'&#10;/usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli/exec.rb:74:in `load'&#10;/usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli/exec.rb:74:in `kernel_load'&#10;/usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli/exec.rb:28:in `run'&#10;/usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli.rb:463:in `exec'&#10;/usr/local/lib/ruby/site_ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'&#10;/usr/local/lib/ruby/site_ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'&#10;/usr/local/lib/ruby/site_ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'&#10;/usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli.rb:27:in `dispatch'&#10;/usr/local/lib/ruby/site_ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'&#10;/usr/local/lib/ruby/site_ruby/2.5.0/bundler/cli.rb:18:in `start'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.3/exe/bundle:30:in `block in &lt;top (required)&gt;'&#10;/usr/local/lib/ruby/site_ruby/2.5.0/bundler/friendly_errors.rb:124:in `with_friendly_errors'&#10;/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.17.3/exe/bundle:22:in `&lt;top (required)&gt;'&#10;/usr/local/bin/bundle:23:in `load'&#10;/usr/local/bin/bundle:23:in `&lt;main&gt;'&#10;&#10;Exit status of command 'pod repo push SmartOTTIOSPods '.github/PromiseKit.podspec' --sources='https://github.com/CocoaPods/Specs.git,https://bitbucket.org/24imedia/smart-ott-ios-pods.git' --allow-warnings --verbose' was 1 instead of 0.&#10;&#10;Validating spec&#10; -&gt; PromiseKit.podspec -&gt; PromiseKit.podspec&#10;    - ERROR | spec: The specification defined in `.github/PromiseKit.podspec` could not be loaded.&#10;&#10;&#10;[!] Invalid `PromiseKit.podspec` file: undefined local variable or method `picker_cc' for Pod:Module.&#10;&#10; #  from /Users/csimon/projects/PromiseKit/.github/PromiseKit.podspec:69&#10; #  -------------------------------------------&#10; #    s.subspec 'UIKit' do |ss|&#10; &gt;      ss.ios.source_files = ss.tvos.source_files = Dir['Extensions/UIKit/Sources/*'] - [picker_cc]&#10; #      ss.tvos.frameworks = ss.ios.frameworks = 'UIKit'&#10; #  -------------------------------------------&#10;&#10;&#10;[!] The `.github/PromiseKit.podspec` specification does not validate.&#10;&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/cocoapods-1.6.0.beta.2/lib/cocoapods/command/repo/push.rb:147:in `block in validate_podspec_files'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/cocoapods-1.6.0.beta.2/lib/cocoapods/command/repo/push.rb:132:in `each'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/cocoapods-1.6.0.beta.2/lib/cocoapods/command/repo/push.rb:132:in `validate_podspec_files'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/cocoapods-1.6.0.beta.2/lib/cocoapods/command/repo/push.rb:77:in `run'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/claide-1.0.2/lib/claide/command.rb:334:in `run'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/cocoapods-1.6.0.beta.2/lib/cocoapods/command.rb:52:in `run'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/gems/cocoapods-1.6.0.beta.2/bin/pod:55:in `&lt;top (required)&gt;'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/bin/pod:23:in `load'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.5.0/bin/pod:23:in `&lt;main&gt;'&#10;" />
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="7: pod repo update" time="61.032126">
         
       </testcase>
     

@@ -16,6 +16,6 @@ lane :deploy do |params|
   release_type = params[:release_type]
   xcversion(version:'10.1')
   sh("git fetch --tags")
-  pod_push(path: ".github/PromiseKit.podspec", repo: "SmartOTTIOSPods", allow_warnings: true, verbose: true, sources:["https://github.com/CocoaPods/Specs.git","https://bitbucket.org/24imedia/smart-ott-ios-pods.git"])
+  pod_push(path: "PromiseKit.podspec", repo: "SmartOTTIOSPods", swift_version: 4.2, allow_warnings: true, verbose: true, sources:["https://github.com/CocoaPods/Specs.git","https://bitbucket.org/24imedia/smart-ott-ios-pods.git"])
   sh("pod repo update")
 end
