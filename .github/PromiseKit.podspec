@@ -36,6 +36,42 @@ Pod::Spec.new do |s|
   }
 
 
+  s.subspec 'CorePromise' do |ss|
+    hh = Dir['Sources/*.h'] - Dir['Sources/*+Private.h']
+
+    cc = Dir['Sources/*.swift'] - ['Sources/SwiftPM.swift']
+    cc << 'Sources/{after,AnyPromise,GlobalState,dispatch_promise,hang,join,PMKPromise,when,race}.m'
+    cc += hh
+
+    ss.source_files = cc
+    ss.public_header_files = hh
+    ss.preserve_paths = 'Sources/AnyPromise+Private.h', 'Sources/PMKCallVariadicBlock.m', 'Sources/NSMethodSignatureForBlock.m'
+    ss.frameworks = 'Foundation'
+
+    ss.ios.deployment_target = '8.0'
+    ss.osx.deployment_target = '10.10'
+    ss.watchos.deployment_target = '2.0'
+    ss.tvos.deployment_target = '9.0'
+  end
+
+  s.subspec 'Foundation' do |ss|
+    ss.source_files = Dir['Extensions/Foundation/Sources/*']
+    ss.dependency 'PromiseKit/CorePromise'
+    ss.frameworks = 'Foundation'
+    ss.ios.deployment_target = '8.0'
+    ss.osx.deployment_target = '10.10'
+    ss.watchos.deployment_target = '2.0'
+    ss.tvos.deployment_target = '9.0'
+  end
+
+
+  s.subspec 'UIKit' do |ss|
+    ss.ios.source_files = ss.tvos.source_files = Dir['Extensions/UIKit/Sources/*'] - [picker_cc]
+    ss.tvos.frameworks = ss.ios.frameworks = 'UIKit'
+    ss.dependency 'PromiseKit/CorePromise'
+    ss.ios.deployment_target = '8.0'
+    ss.tvos.deployment_target = '9.0'
+  end
 
 
 end
