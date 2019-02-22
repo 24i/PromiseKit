@@ -9,3 +9,4 @@ DerivedData
 vendor
 .bundle/
 fastlane/docs/
+fastlane/test_output
