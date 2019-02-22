@@ -50,7 +50,9 @@ public extension Thenable {
         }
         return rp
     }
-
+    func then(on: DispatchQueue? = conf.Q.map, flags: DispatchWorkItemFlags? = nil, _ body: @escaping(T) throws -> Void) ->  Promise<Void> {
+        return self.done(on: on, flags: flags, body)
+    }
     /**
      The provided closure is executed when this promise is resolved.
      

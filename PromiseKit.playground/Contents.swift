@@ -9,7 +9,9 @@ import PromiseKit
 func promise3() -> Promise<Int> {
     return after(.seconds(1)).map{ 3 }
 }
+Promise.value(1).then { (_) in
 
+}
 firstly {
     Promise.value(1)
 }.map { _ in
