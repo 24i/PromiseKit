@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = "PromiseKit"
 
-  s.version = "4.50.0"
+  s.version = "4.50.1"
 
   s.source = {
     :git => "https://github.com/24i/#{s.name}.git",
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
     hh = Dir['Sources/*.h'] - Dir['Sources/*+Private.h']
 
     cc = Dir['Sources/*.swift'] - ['Sources/SwiftPM.swift']
-    cc << 'Sources/{after,AnyPromise,GlobalState,dispatch_promise,hang,join,PMKPromise,when,race}.m'
+    cc += 'Sources/{after,AnyPromise,GlobalState,dispatch_promise,hang,join,PMKPromise,when,race}.m'
     cc += hh
 
     ss.source_files = cc
