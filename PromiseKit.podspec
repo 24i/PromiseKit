@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = "PromiseKit"
 
-  s.version = "4.47.0"
+  s.version = "4.48.0"
 
   s.source = {
     :git => "https://github.com/24i/#{s.name}.git",
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/mxcl'
   s.authors  = { 'Max Howell' => 'mxcl@me.com' }
   s.documentation_url = 'http://promisekit.org/docs/'
-  s.default_subspecs = 'CorePromise', 'UIKit', 'Foundation'
+  s.default_subspecs = 'CorePromise'
   s.requires_arc = true
 
   # CocoaPods documentation (like usual) is unclear about the
