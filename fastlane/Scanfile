@@ -1,0 +1,5 @@
+scheme "SmartOTTIOSNet-Example"
+workspace "Example/SmartOTTIOSNet.xcworkspace"
+
+clean false
+output_types "junit"

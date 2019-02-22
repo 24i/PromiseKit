@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: import_from_git" time="2.786553">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: bundle_install" time="0.426079">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: rm -rf ../output" time="0.008118">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: rm -rf ../derivedData" time="0.013203">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: xcversion" time="0.644165">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="5: git fetch --tags" time="1.784856">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="6: pod_push" time="127.699281">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
