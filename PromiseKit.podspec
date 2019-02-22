@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = "PromiseKit"
 
-  s.version = "4.50.3"
+  s.version = "4.50.1"
 
   s.source = {
     :git => "https://github.com/24i/#{s.name}.git",
