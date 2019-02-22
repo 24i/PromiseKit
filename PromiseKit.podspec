@@ -39,8 +39,8 @@ Pod::Spec.new do |s|
   s.subspec 'CorePromise' do |ss|
     hh = Dir['Sources/*.h'] - Dir['Sources/*+Private.h']
 
-    cc = Dir['Sources/*.swift'] - ['Sources/SwiftPM.swift']
-    cc += Dir['Sources/{after,AnyPromise,GlobalState,dispatch_promise,hang,join,PMKPromise,when,race}.m']
+    cc = Dir['Sources/*.swift']
+    cc << 'Sources/{after,AnyPromise,GlobalState,dispatch_promise,hang,join,PMKPromise,when,race}.m'
     cc += hh
 
     ss.source_files = cc
