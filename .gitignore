@@ -8,3 +8,4 @@ DerivedData
 /Tests/JS-A+/build
 vendor
 .bundle/
+fastlane/docs/
