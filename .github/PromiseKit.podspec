@@ -1,12 +1,10 @@
 Pod::Spec.new do |s|
   s.name = "PromiseKit"
 
-  `xcodebuild -project PromiseKit.xcodeproj -showBuildSettings` =~ /CURRENT_PROJECT_VERSION = ((\d\.)+\d)/
-  abort("No version detected") if $1.nil?
-  s.version = $1
+  s.version = "4.44.0"
 
   s.source = {
-    :git => "https://github.com/mxcl/#{s.name}.git",
+    :git => "https://github.com/24i/#{s.name}.git",
     :tag => s.version,
     :submodules => true
   }

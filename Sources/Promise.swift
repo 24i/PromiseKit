@@ -42,11 +42,14 @@ public final class Promise<T>: Thenable, CatchMixin {
         return Promise(box: SealedBox(value: .fulfilled(value)))
     }
 
+
     /// Initialize a new rejected promise.
     public init(error: Error) {
         box = SealedBox(value: .rejected(error))
     }
-
+    public init(value: T){
+        box = SealedBox(value: .fulfilled(value))
+    }
     /// Initialize a new promise bound to the provided `Thenable`.
     public init<U: Thenable>(_ bridge: U) where U.T == T {
         box = EmptyBox()
@@ -62,6 +65,29 @@ public final class Promise<T>: Thenable, CatchMixin {
         } catch {
             resolver.reject(error)
         }
+    }
+
+    /// Initialize a new promise that can be resolved with the provided `Resolver`.
+    public init(resolvers: (_ fulfill: @escaping (T) -> Void, _ reject: @escaping (Error) -> Void) throws -> Void) {
+        box = EmptyBox()
+        let resolver = Resolver(box)
+        do{
+            try resolvers({ resolver.fulfill($0) }, { error in
+                #if !PMKDisableWarnings
+                if self.isPending {
+                    resolver.reject(error)
+                } else {
+                    NSLog("PromiseKit: warning: reject called on already rejected Promise: \(error)")
+                }
+                #else
+                resolver.reject(error)
+                #endif
+            })
+        }catch {
+            resolver.reject(error)
+        }
+
+
     }
 
     /// - Returns: a tuple of a new pending promise and its `Resolver`.

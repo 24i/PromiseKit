@@ -21,7 +21,7 @@ public extension CatchMixin {
      - SeeAlso: [Cancellation](https://github.com/mxcl/PromiseKit/blob/master/Documentation/CommonPatterns.md#cancellation)
      */
     @discardableResult
-    func `catch`(on: DispatchQueue? = conf.Q.return, flags: DispatchWorkItemFlags? = nil, policy: CatchPolicy = conf.catchPolicy, _ body: @escaping(Error) -> Void) -> PMKFinalizer {
+    func `catch`(on: DispatchQueue? = conf.Q.return, flags: DispatchWorkItemFlags? = nil, policy: CatchPolicy = conf.catchPolicy, execute body: @escaping(Error) -> Void) -> PMKFinalizer {
         let finalizer = PMKFinalizer()
         pipe {
             switch $0 {
@@ -39,6 +39,8 @@ public extension CatchMixin {
         }
         return finalizer
     }
+
+    
 }
 
 public class PMKFinalizer {
@@ -72,7 +74,7 @@ public extension CatchMixin {
      - Parameter body: The handler to execute if this promise is rejected.
      - SeeAlso: [Cancellation](https://github.com/mxcl/PromiseKit/blob/master/Documentation/CommonPatterns.md#cancellation)
      */
-    func recover<U: Thenable>(on: DispatchQueue? = conf.Q.map, flags: DispatchWorkItemFlags? = nil, policy: CatchPolicy = conf.catchPolicy, _ body: @escaping(Error) throws -> U) -> Promise<T> where U.T == T {
+    func recover<U: Thenable>(on: DispatchQueue? = conf.Q.map, flags: DispatchWorkItemFlags? = nil, policy: CatchPolicy = conf.catchPolicy, execute body: @escaping(Error) throws -> U) -> Promise<T> where U.T == T {
         let rp = Promise<U.T>(.pending)
         pipe {
             switch $0 {
@@ -96,7 +98,7 @@ public extension CatchMixin {
         }
         return rp
     }
-
+   
     /**
      The provided closure executes when this promise rejects.
      This variant of `recover` requires the handler to return a Guarantee, thus it returns a Guarantee itself and your closure cannot `throw`.
@@ -121,6 +123,8 @@ public extension CatchMixin {
         return rg
     }
 
+
+    
     /**
      The provided closure executes when this promise resolves, whether it rejects or not.
      
@@ -253,4 +257,5 @@ public extension CatchMixin where T == Void {
         }
         return rg
     }
+    
 }

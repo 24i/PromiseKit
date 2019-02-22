@@ -30,7 +30,7 @@ public extension Thenable {
                //…
            }
      */
-    func then<U: Thenable>(on: DispatchQueue? = conf.Q.map, flags: DispatchWorkItemFlags? = nil, _ body: @escaping(T) throws -> U) -> Promise<U.T> {
+    func then<U: Thenable>(on: DispatchQueue? = conf.Q.map, flags: DispatchWorkItemFlags? = nil, execute body: @escaping(T) throws -> U) -> Promise<U.T> {
         let rp = Promise<U.T>(.pending)
         pipe {
             switch $0 {
@@ -50,9 +50,32 @@ public extension Thenable {
         }
         return rp
     }
-    func then(on: DispatchQueue? = conf.Q.map, flags: DispatchWorkItemFlags? = nil, _ body: @escaping(T) throws -> Void) ->  Promise<Void> {
+    func then<U>(on: DispatchQueue? = conf.Q.map, flags: DispatchWorkItemFlags? = nil, execute body: @escaping(T) throws -> U) -> Promise<U> {
+        let rp:Promise<U> = Promise<U>(.pending)
+        pipe {
+            switch $0 {
+            case .fulfilled(let value):
+                on.async(flags: flags) {
+                    do{
+                        let result = try body(value)
+                        rp.box.seal(Result.fulfilled(result))
+
+                    }catch{
+                        rp.box.seal(Result.rejected(error))
+
+                    }
+                }
+            case .rejected(let error):
+                rp.box.seal(.rejected(error))
+            }
+        }
+        return rp
+    }
+    func then(on: DispatchQueue? = conf.Q.map, flags: DispatchWorkItemFlags? = nil, execute body: @escaping(T) throws -> Void) ->  Promise<Void> {
         return self.done(on: on, flags: flags, body)
     }
+
+
     /**
      The provided closure is executed when this promise is resolved.
      
@@ -202,14 +225,14 @@ public extension Thenable {
      promise.tap{ print($0) }.then{ /*…*/ }
      */
     func tap(on: DispatchQueue? = conf.Q.map, flags: DispatchWorkItemFlags? = nil, _ body: @escaping(Result<T>) -> Void) -> Promise<T> {
-        return Promise { seal in
+        return Promise(resolver: { seal in
             pipe { result in
                 on.async(flags: flags) {
                     body(result)
                     seal.resolve(result)
                 }
             }
-        }
+        })
     }
 
     /// - Returns: a new promise chained off this promise but with its value discarded.

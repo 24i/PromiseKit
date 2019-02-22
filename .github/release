@@ -14,4 +14,4 @@ git add PromiseKit.xcodeproj/project.pbxproj
 git commit -m "Tag $Vn"
 git tag $Vn
 git push origin $Vn
-open "https://github.com/mxcl/PromiseKit/releases/tag/$Vn"
+open "https://github.com/24i/PromiseKit/releases/tag/$Vn"

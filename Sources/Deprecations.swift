@@ -40,6 +40,42 @@ public extension Promise {
     func always(on q: DispatchQueue = .main, execute body: @escaping () -> Void) -> Promise {
         return ensure(on: q, body)
     }
+
+    @discardableResult
+    @available(*, deprecated, message: "See `catch`")
+    func `catch`(on: DispatchQueue? = conf.Q.return, flags: DispatchWorkItemFlags? = nil, policy: CatchPolicy = conf.catchPolicy, execute body: @escaping(Error) -> Void) -> Self {
+        let finalizer: PMKFinalizer = self.catch(on: on, flags: flags, policy: policy, execute: body)
+        finalizer.finally {}
+        return self
+    }
+
+    @discardableResult
+    @available(*, deprecated, message: "See `recover`")
+    func recover(on: DispatchQueue? = conf.Q.map, flags: DispatchWorkItemFlags? = nil, policy: CatchPolicy = conf.catchPolicy, execute body: @escaping(Error) throws -> T) -> Promise<T>{
+        let rp: Promise<T> = Promise<T>(.pending)
+        pipe {
+            switch $0 {
+            case .fulfilled(let value):
+                rp.box.seal(.fulfilled(value))
+            case .rejected(let error):
+                if policy == .allErrors || !error.isCancelled {
+                    on.async(flags: flags) {
+                        do {
+                            let rv = try body(error)
+                            rp.box.seal(.fulfilled(rv))
+                        } catch {
+                            rp.box.seal(.rejected(error))
+                        }
+                    }
+                } else {
+                    rp.box.seal(.rejected(error))
+                }
+            }
+        }
+        return rp
+
+
+    }
 }
 
 public extension Thenable {
@@ -90,4 +126,9 @@ public extension Thenable where T: Sequence, T.Iterator.Element: Comparable {
     func sorted(on: DispatchQueue? = conf.Q.map) -> Promise<[T.Iterator.Element]> {
         return sortedValues(on: on)
     }
+}
+
+public extension CatchMixin{
+    
+
 }
