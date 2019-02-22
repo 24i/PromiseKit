@@ -15,6 +15,9 @@ lane :deploy do |params|
   bump_type = params[:bump_type]
   release_type = params[:release_type]
   xcversion(version:'10.1')
+  version = pod_increase_version_number(podspec: 'PromiseKit.podspec', bump_type: bump_type, release_type: release_type)
+  puts version
+  push_to_git_remote(force: false, tags: true)
   sh("git fetch --tags")
   pod_push(path: "PromiseKit.podspec", repo: "SmartOTTIOSPods", swift_version: 4.2, allow_warnings: true, verbose: true, sources:["https://github.com/CocoaPods/Specs.git","https://bitbucket.org/24imedia/smart-ott-ios-pods.git"])
   sh("pod repo update")

@@ -5,42 +5,93 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: import_from_git" time="2.041821">
+      <testcase classname="fastlane.lanes" name="00: import_from_git" time="2.00364">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: bundle_install" time="0.47728">
+      <testcase classname="fastlane.lanes" name="01: bundle_install" time="0.726984">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: rm -rf ../output" time="0.00836">
+      <testcase classname="fastlane.lanes" name="02: rm -rf ../output" time="0.009082">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: rm -rf ../derivedData" time="0.00781">
+      <testcase classname="fastlane.lanes" name="03: rm -rf ../derivedData" time="0.005448">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: xcversion" time="1.368585">
+      <testcase classname="fastlane.lanes" name="04: xcversion" time="2.369867">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: git fetch --tags" time="1.737153">
+      <testcase classname="fastlane.lanes" name="05: Switch to pod_increase_version_number lane" time="0.001531">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="6: pod_push" time="176.97131">
+      <testcase classname="fastlane.lanes" name="06: npm install -g podspec-bump" time="2.546071">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="7: pod repo update" time="61.032126">
+      <testcase classname="fastlane.lanes" name="07: Switch to clean_release_number lane" time="0.00352">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="08: cd ../ &amp;&amp; podspec-bump --dump-version" time="0.149311">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="09: cd ../ &amp;&amp; podspec-bump minor -w" time="0.127633">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="10: Switch to increment_subfix_number lane" time="0.001293">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="11: cd ../ &amp;&amp; podspec-bump --dump-version" time="0.13644">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="12: git_commit" time="0.100888">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="13: git tag 4.49.0
+" time="0.058358">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="14: cd ../ &amp;&amp; podspec-bump --dump-version" time="0.210604">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="15: push_to_git_remote" time="4.296825">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="16: git fetch --tags" time="1.740618">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="17: pod_push" time="12.441576">
         
       </testcase>
     
