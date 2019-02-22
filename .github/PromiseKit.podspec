@@ -65,6 +65,8 @@ Pod::Spec.new do |s|
   end
 
 
+  picker_cc = 'Extensions/UIKit/Sources/UIImagePickerController+Promise.swift'
+
   s.subspec 'UIKit' do |ss|
     ss.ios.source_files = ss.tvos.source_files = Dir['Extensions/UIKit/Sources/*'] - [picker_cc]
     ss.tvos.frameworks = ss.ios.frameworks = 'UIKit'
