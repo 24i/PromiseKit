@@ -1,12 +1,11 @@
 Pod::Spec.new do |s|
   s.name = "PromiseKit"
 
-  s.version = "4.50.5"
+  s.version = "4.50.6"
 
   s.source = {
     :git => "https://github.com/24i/#{s.name}.git",
-    :tag => s.version,
-    :submodules => true
+    :tag => s.version
   }
 
   s.license = 'MIT'
@@ -37,11 +36,9 @@ Pod::Spec.new do |s|
 
 
   s.subspec 'CorePromise' do |ss|
-    hh = Dir['Sources/*.h'] - Dir['Sources/*+Private.h']
+    hh = 'Sources/*.h'
 
-    cc = Dir['Sources/*.swift'] - ['Sources/SwiftPM.swift']
-    cc += Dir['Sources/{after,AnyPromise,GlobalState,dispatch_promise,hang,join,PMKPromise,when,race}.m']
-    cc += hh
+    cc = 'Sources/*.h', 'Sources/*.swift', 'Sources/{after,AnyPromise,GlobalState,dispatch_promise,hang,join,PMKPromise,when,race}.m'
 
     ss.source_files = cc
     ss.public_header_files = hh
