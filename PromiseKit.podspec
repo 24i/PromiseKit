@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = "PromiseKit"
 
-  s.version = "4.48.0"
+  s.version = "4.49.0"
 
   s.source = {
     :git => "https://github.com/24i/#{s.name}.git",
@@ -54,26 +54,6 @@ Pod::Spec.new do |s|
     ss.tvos.deployment_target = '9.0'
   end
 
-  s.subspec 'Foundation' do |ss|
-    ss.source_files = Dir['Extensions/Foundation/Sources/*']
-    ss.dependency 'PromiseKit/CorePromise'
-    ss.frameworks = 'Foundation'
-    ss.ios.deployment_target = '8.0'
-    ss.osx.deployment_target = '10.10'
-    ss.watchos.deployment_target = '2.0'
-    ss.tvos.deployment_target = '9.0'
-  end
-
-
-  picker_cc = 'Extensions/UIKit/Sources/UIImagePickerController+Promise.swift'
-
-  s.subspec 'UIKit' do |ss|
-    ss.ios.source_files = ss.tvos.source_files = Dir['Extensions/UIKit/Sources/*'] - [picker_cc]
-    ss.tvos.frameworks = ss.ios.frameworks = 'UIKit'
-    ss.dependency 'PromiseKit/CorePromise'
-    ss.ios.deployment_target = '8.0'
-    ss.tvos.deployment_target = '9.0'
-  end
 
 
 end
