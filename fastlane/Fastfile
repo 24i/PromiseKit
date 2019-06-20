@@ -19,6 +19,6 @@ lane :deploy do |params|
   puts version
   push_to_git_remote(force: false, tags: true)
   sh("git fetch --tags")
-  pod_push(path: "PromiseKit.podspec", repo: "SmartOTTIOSPods", swift_version: 4.2, allow_warnings: true, verbose: true, sources:["https://github.com/CocoaPods/Specs.git","https://bitbucket.org/24imedia/smart-ott-ios-pods.git"])
+  pod_push(path: "PromiseKit.podspec", repo: "SmartOTTIOSPods", allow_warnings: true, verbose: true, sources:["https://github.com/CocoaPods/Specs.git","https://bitbucket.org/24imedia/smart-ott-ios-pods.git"])
   sh("pod repo update")
 end
