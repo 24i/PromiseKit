@@ -14,7 +14,7 @@ end
 lane :deploy do |params|
   bump_type = params[:bump_type]
   release_type = params[:release_type]
-  xcversion(version:'10.1')
+  xcversion(version:'~>10.1')
   version = pod_increase_version_number(podspec: 'PromiseKit.podspec', bump_type: bump_type, release_type: release_type)
   puts version
   push_to_git_remote(force: false, tags: true)

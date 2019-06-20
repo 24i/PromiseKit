@@ -5,98 +5,29 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: import_from_git" time="3.434638">
+      <testcase classname="fastlane.lanes" name="0: import_from_git" time="3.530902">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: bundle_install" time="0.487422">
+      <testcase classname="fastlane.lanes" name="1: bundle_install" time="0.453914">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="02: rm -rf ../output" time="0.009216">
+      <testcase classname="fastlane.lanes" name="2: rm -rf ../output" time="0.005611">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="03: rm -rf ../derivedData" time="0.007115">
+      <testcase classname="fastlane.lanes" name="3: rm -rf ../derivedData" time="0.005037">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="04: xcversion" time="2.627715">
+      <testcase classname="fastlane.lanes" name="4: xcversion" time="0.30899">
         
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="05: Switch to pod_increase_version_number lane" time="0.001463">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="06: npm install -g podspec-bump" time="3.234846">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="07: Switch to clean_release_number lane" time="0.001761">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="08: cd ../ &amp;&amp; podspec-bump --dump-version" time="0.112919">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="09: cd ../ &amp;&amp; podspec-bump minor -w" time="0.113272">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="10: Switch to increment_subfix_number lane" time="0.001275">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="11: cd ../ &amp;&amp; podspec-bump --dump-version" time="0.117341">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="12: git_commit" time="0.046782">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="13: git tag 4.52.0
-" time="0.021858">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="14: cd ../ &amp;&amp; podspec-bump --dump-version" time="0.121847">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="15: push_to_git_remote" time="3.853904">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="16: git fetch --tags" time="1.565366">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="17: pod_push" time="129.115499">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="18: pod repo update" time="46.908904">
+          <failure message="/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/actions/actions_helper.rb:48:in `execute_action'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:236:in `block in execute_action'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:231:in `chdir'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:231:in `execute_action'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:157:in `trigger_action_by_name'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/fast_file.rb:149:in `method_missing'&#10;Fastfile:17:in `block in parsing_binding'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:49:in `block in execute'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:45:in `chdir'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/runner.rb:45:in `execute'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/lane_manager.rb:59:in `cruise_lane'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/command_line_handler.rb:36:in `handle'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/commands_generator.rb:107:in `block (2 levels) in run'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/commander-fastlane-4.4.6/lib/commander/command.rb:178:in `call'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/commander-fastlane-4.4.6/lib/commander/command.rb:153:in `run'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/commander-fastlane-4.4.6/lib/commander/runner.rb:476:in `run_active_command'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:75:in `run!'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/commander-fastlane-4.4.6/lib/commander/delegates.rb:15:in `run!'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/commands_generator.rb:332:in `run'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/commands_generator.rb:41:in `start'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/fastlane/lib/fastlane/cli_tools_distributor.rb:108:in `take_off'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/gems/fastlane-2.97.0/bin/fastlane:20:in `&lt;top (required)&gt;'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/bin/fastlane:23:in `load'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/bin/fastlane:23:in `&lt;main&gt;'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/bin/ruby_executable_hooks:24:in `eval'&#10;/Users/csimon/projects/PromiseKit/vendor/bundle/ruby/2.6.0/bin/ruby_executable_hooks:24:in `&lt;main&gt;'&#10;&#10;Cannot find an installed Xcode satisfying '10.1'" />
         
       </testcase>
     
