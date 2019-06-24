@@ -52,7 +52,7 @@ public extension CatchMixin {
         finalizeFlags: DispatchWorkItemFlags? = nil,
         finalizeBody: @escaping() -> Void
     ) {
-        let finalizer: PMKFinalizer = self.catch(on: catchOn, flags: catchFlags, policy: catchPolicy, catchBody)
+        let finalizer: PMKFinalizer = self.catch(on: catchOn, flags: catchFlags, policy: catchPolicy, execute: catchBody)
         finalizer.finally(on: finalizeOn, flags: finalizeFlags, finalizeBody)
     }
 
