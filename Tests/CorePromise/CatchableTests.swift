@@ -33,6 +33,35 @@ class CatchableTests: XCTestCase {
         helper(error: Error.dummy, on: finallyQueue, flags: .barrier)
     }
 
+    func testCatchAndFinalize() {
+        let finallyQueue = DispatchQueue(label: "\(#file):\(#line)", attributes: .concurrent)
+        
+        func helper(error: Error, on queue: DispatchQueue = .main, flags: DispatchWorkItemFlags? = nil) {
+            let ex = (expectation(description: ""), expectation(description: ""))
+            var x = 0
+            Promise<Void>(error: error).catchAndFinalize(catchPolicy: .allErrors, catchBody: { _ in
+                XCTAssertEqual(x, 0)
+                x += 1
+                ex.0.fulfill()
+            }, finalizeOn: queue, finalizeFlags: flags, finalizeBody: {
+                if let flags = flags, flags.contains(.barrier) {
+                    dispatchPrecondition(condition: .onQueueAsBarrier(queue))
+                } else {
+                    dispatchPrecondition(condition: .onQueue(queue))
+                }
+                XCTAssertEqual(x, 1)
+                x += 1
+                ex.1.fulfill()
+            })
+            wait(for: [ex.0, ex.1], timeout: 10)
+        }
+        
+        helper(error: Error.dummy)
+        helper(error: Error.cancelled)
+        helper(error: Error.dummy, on: finallyQueue)
+        helper(error: Error.dummy, on: finallyQueue, flags: .barrier)
+    }  
+    
     func testCauterize() {
         let ex = expectation(description: "")
         let p = Promise<Void>(error: Error.dummy)

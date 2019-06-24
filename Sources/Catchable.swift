@@ -40,6 +40,22 @@ public extension CatchMixin {
         return finalizer
     }
 
+    /**
+     catch -> finally. Why? To be able to call always non-legacy catch.
+     */
+    func catchAndFinalize(
+        catchOn: DispatchQueue? = conf.Q.return,
+        catchFlags: DispatchWorkItemFlags? = nil,
+        catchPolicy: CatchPolicy = conf.catchPolicy,
+        catchBody: @escaping(Error) -> Void,
+        finalizeOn: DispatchQueue? = conf.Q.return,
+        finalizeFlags: DispatchWorkItemFlags? = nil,
+        finalizeBody: @escaping() -> Void
+    ) {
+        let finalizer: PMKFinalizer = self.catch(on: catchOn, flags: catchFlags, policy: catchPolicy, catchBody)
+        finalizer.finally(on: finalizeOn, flags: finalizeFlags, finalizeBody)
+    }
+
     
 }
 
