@@ -8,6 +8,7 @@ branches:
     - master
     - v4
     - legacy-1.x
+    - feature/compatible
     - /^\d+\.\d+\.\d+$/
 stages:
   - name: pretest
